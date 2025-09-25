@@ -1,0 +1,19 @@
+<resources>
+    <!-- Colores primarios -->
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+
+    <!-- Colores secundarios -->
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+
+    <!-- Blanco y negro -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+<!-- Fondos personalizados para cada pantalla -->
+    <color name="bg_decades">#7DC1DB</color>   <!-- Azul -->
+    <color name="bg_artists">#363333</color>   <!-- Morado -->
+    <color name="bg_hits">#F29F68</color>      <!-- Verde -->
+
+</resources>

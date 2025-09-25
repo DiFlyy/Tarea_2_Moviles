@@ -1,0 +1,30 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:label="Pop Music Explorer"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PopMusic">
+
+        <!-- Activity principal con MAIN/LAUNCHER -->
+        <activity
+            android:name=".ui.decades.DecadesActivity"
+            android:exported="true">   <!-- 👈 Obligatorio en Android 12+ -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Otras actividades sin intent-filter -->
+        <activity
+            android:name=".ui.artists.ArtistsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.hits.HitsActivity"
+            android:exported="false" />
+
+    </application>
+</manifest>
