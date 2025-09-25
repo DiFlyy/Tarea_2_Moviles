@@ -75,12 +75,9 @@ Colores duplicados en colors.xml → Se revisó y limpiaron las definiciones rep
 
 Recursos faltantes → Se agregaron drawable de prueba (ic_artist1, ic_artist2) y fondos de color personalizados.
 
-📸 Capturas de pantalla
-
-(pendiente de agregar desde el emulador)
-
-Pantalla de Décadas
-
-Pantalla de Artistas
-
-Pantalla de Hits
+📸 Capturas de 
+![Screenshot_20250925-161306](https://github.com/user-attachments/assets/edaf23f3-51e4-4881-96b3-5d3568ee3f4a)
+![Screenshot_20250925-161315](https://github.com/user-attachments/assets/bb25cdeb-0b6e-4871-b5e7-3a819dfcb722)
+![Screenshot_20250925-161331](https://github.com/user-attachments/assets/a8927098-7a11-42c4-bf37-c6afda2701df)
+![Screenshot_20250925-161340](https://github.com/user-attachments/assets/2c3c5e37-5e87-4f6b-9e0f-401e093f2f10)
+![Screenshot_20250925-161349](https://github.com/user-attachments/assets/c893f177-9697-4def-ae4f-1e7abd479c7f)
