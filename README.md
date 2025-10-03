@@ -1,83 +1,89 @@
 🎵 Pop Music Explorer
 
-Aplicación Android desarrollada en Kotlin que permite explorar la música pop de diferentes décadas de manera jerárquica e inmersiva.
+Aplicación Android desarrollada como práctica académica.
+El objetivo es explorar la música pop por décadas, navegando desde décadas → artistas → hits, con un diseño visual atractivo y transiciones animadas.
 
-📋 Descripción
+📱 Características principales
 
-La aplicación Pop Music Explorer ofrece un recorrido interactivo a través de la música pop en distintas épocas:
+Jerarquía de navegación en tres niveles:
 
-Selección de década → El usuario elige entre los años 80s y 2010s.
+Selección de década (80s o 2010s).
 
-Selección de artista → Cada década presenta dos artistas representativos con su imagen.
+Selección de artista dentro de la década.
 
-Selección de hits → Al elegir un artista, se muestran dos canciones icónicas. Al presionar sobre cada una, aparece información interesante (trivia) mediante un Snackbar.
+Visualización de los hits más representativos del artista.
 
-🗂️ Estructura jerárquica
+Interfaz personalizada con imágenes, íconos circulares y colores temáticos.
 
-DecadesActivity → Pantalla principal con dos décadas.
+Transiciones animadas entre pantallas para mejorar la experiencia de usuario.
 
-ArtistsActivity → Lista de artistas por década, mostrados con imagen circular y nombre.
+Compatibilidad con tema claro y oscuro gracias a la implementación de SharedPreferences.
 
-HitsActivity → Canciones del artista seleccionado, mostradas como botones de texto.
+⚙️ Requisitos técnicos
 
-🎨 Diseño visual
+Android Studio (versión recomendada: Hedgehog 2023.1.1 o superior).
 
-Cada pantalla tiene un fondo de color distinto (bg_decades, bg_artists, bg_hits).
+Kotlin como lenguaje principal.
 
-Las décadas y artistas usan íconos circulares con imágenes personalizadas.
+Librerías de AndroidX y Material Design.
 
-Se incluyó un título en la pantalla principal: "Pop Music Explorer".
+🚀 Ejecución del proyecto
 
-Las transiciones entre Activities usan animaciones (slide_in_left, slide_out_right, fade_in, fade_out).
+1.Clona este repositorio:
+git clone https://github.com/tu_usuario/Tarea3-PopMusicExplorer.git
 
-✅ Requisitos técnicos cumplidos
+2.Ábrelo en Android Studio.
+3.Sincroniza Gradle (Sync Project with Gradle Files).
+4.Ejecuta la app en un emulador o dispositivo físico con Android 8.0 (API 26) o superior.
 
-Tres Activities jerárquicas: Décadas → Artistas → Hits.
+Implementación de Temas con SharedPreferences
 
-Fragments opcionales no fueron requeridos, pero se dejó lista la estructura para extender.
+En esta nueva versión, se añadió la opción para cambiar entre tema claro y oscuro y que la elección persista entre sesiones.
 
-ViewBinding activado en Gradle para un manejo seguro de vistas.
+🔧 ¿Cómo se implementó?
 
-Snackbar utilizado para mostrar trivia de cada hit.
+Se definieron dos temas en themes.xml:
 
-Código limpio y comentado.
+Theme.PopMusic.Light (tema claro).
 
-🚀 Instrucciones de ejecución
+Theme.PopMusic.Dark (tema oscuro).
 
-Clonar el repositorio en Android Studio:
+Se agregó un SwitchCompat en la pantalla principal (DecadesActivity) que permite alternar el tema.
 
-git clone https://github.com/usuario/Tarea_2_Moviles.git
+Se utiliza SharedPreferences para guardar la elección del usuario bajo la clave isDarkMode.
+
+Al iniciar cualquier Activity, se aplica el tema correspondiente antes de inflar la UI, garantizando coherencia en toda la aplicación.
+
+📖 Uso del selector de tema
+
+Abre la aplicación.
+
+En la pantalla principal (Decades), activa el switch de "Modo oscuro".
+
+El tema se aplicará de inmediato y quedará guardado incluso al cerrar y volver a abrir la app.
+
+📷 Capturas de pantalla
+Tema Claro
+![Screenshot_20251002-224345](https://github.com/user-attachments/assets/50460b1f-8690-4b7e-9f73-418e6ac04776)
+![Screenshot_20251002-224352](https://github.com/user-attachments/assets/6c318592-6f4f-4ab1-98a8-674abdfae7d5)
+![Screenshot_20251002-224357](https://github.com/user-attachments/assets/ecdf41d3-11d3-45e3-bfba-b93b280132fc)
+
+Tema Oscuro
+![Screenshot_20251002-224406](https://github.com/user-attachments/assets/71dd72ac-cd19-4ceb-881e-41eb358a3fb5)
+![Screenshot_20251002-224410](https://github.com/user-attachments/assets/816e1785-f00a-41d2-9657-9d309eff865e)
+![Screenshot_20251002-224417](https://github.com/user-attachments/assets/e0e4fcb5-c112-49e9-ac0f-bde7ef4681da)
 
 
-Abrir el proyecto en Android Studio.
+🛠️ Retos y soluciones
 
-Sincronizar con Gradle (Sync Project with Gradle Files).
+Problema: Los colores no cambiaban al alternar el switch.
 
-Ejecutar en un emulador o dispositivo físico con Android 7.0 (API 24) o superior.
+✅ Solución: Se reemplazaron los colores fijos en XML (@android:color/white) por atributos dinámicos (?attr/colorOnSurface).
 
-⚙️ Decisiones de diseño
+Problema: El círculo de imágenes no se aplicaba correctamente.
 
-Se eligió trabajar con dos décadas (80s y 2010s) para mantener la aplicación sencilla y visual.
+✅ Solución: Se utilizó ShapeableImageView de Material Design con app:shapeAppearanceOverlay.
 
-Se implementaron imágenes circulares usando ShapeableImageView de Material Components.
+Problema: Conflictos de recursos (duplicate styles, attr not found).
 
-Se redujo la selección a dos artistas por década y dos canciones por artista para simplificar la navegación.
-
-Los fondos de cada pantalla diferencian visualmente los niveles jerárquicos.
-
-🧩 Retos y soluciones
-
-Problema con Gradle y Kotlin DSL → Se corrigió la configuración de plugins y jvmTarget para evitar errores de compilación.
-
-Errores de android:exported → Se solucionó configurando explícitamente las Activities en AndroidManifest.xml.
-
-Colores duplicados en colors.xml → Se revisó y limpiaron las definiciones repetidas.
-
-Recursos faltantes → Se agregaron drawable de prueba (ic_artist1, ic_artist2) y fondos de color personalizados.
-
-📸 Capturas de 
-![Screenshot_20250925-161306](https://github.com/user-attachments/assets/edaf23f3-51e4-4881-96b3-5d3568ee3f4a)
-![Screenshot_20250925-161315](https://github.com/user-attachments/assets/bb25cdeb-0b6e-4871-b5e7-3a819dfcb722)
-![Screenshot_20250925-161331](https://github.com/user-attachments/assets/a8927098-7a11-42c4-bf37-c6afda2701df)
-![Screenshot_20250925-161340](https://github.com/user-attachments/assets/2c3c5e37-5e87-4f6b-9e0f-401e093f2f10)
-![Screenshot_20250925-161349](https://github.com/user-attachments/assets/c893f177-9697-4def-ae4f-1e7abd479c7f)
+✅ Solución: Limpieza de styles.xml y unificación de definiciones en themes.xml.
