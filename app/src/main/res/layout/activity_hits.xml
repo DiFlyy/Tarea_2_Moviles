@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="24dp"
-    android:background="@color/bg_hits">
+    android:background="?attr/colorSurface">
 
     <!-- Nombre del artista -->
     <TextView
@@ -15,8 +15,8 @@
         android:text="Canciones del Artista"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="24dp"/>
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginBottom="24dp" />
 
     <!-- Hit 1 -->
     <Button
@@ -24,6 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hit 1"
+        android:textColor="?attr/colorOnSurface"
+        android:background="?attr/selectableItemBackground"
         android:layout_marginBottom="16dp" />
 
     <!-- Hit 2 -->
@@ -31,5 +33,8 @@
         android:id="@+id/btnHit2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hit 2" />
+        android:text="Hit 2"
+        android:textColor="?attr/colorOnSurface"
+        android:background="?attr/selectableItemBackground" />
+
 </LinearLayout>

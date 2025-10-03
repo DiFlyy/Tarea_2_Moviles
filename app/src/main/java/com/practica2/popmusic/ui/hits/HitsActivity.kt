@@ -12,6 +12,7 @@ class HitsActivity : AppCompatActivity() {
     private var artist: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        com.practica2.popmusic.util.ThemeHelper.applyTheme(this)
         super.onCreate(savedInstanceState)
         b = ActivityHitsBinding.inflate(layoutInflater)
         setContentView(b.root)

@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
     android:padding="24dp"
-    android:background="@color/bg_decades">
+    android:background="?attr/colorSurface">
 
+    <!-- Switch para modo oscuro -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modo oscuro"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Título -->
     <TextView
         android:id="@+id/tvAppTitle"
         android:layout_width="wrap_content"
@@ -14,8 +25,8 @@
         android:text="🎵 Pop Music Explorer"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="32dp"/>
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginBottom="32dp" />
 
     <!-- Década 80s -->
     <LinearLayout
@@ -25,22 +36,22 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/btn80s"
             android:layout_width="220dp"
             android:layout_height="220dp"
             android:src="@drawable/ic_artist1"
-            android:background="@drawable/circle_bg"
+            android:contentDescription="Década 80s"
             android:scaleType="centerCrop"
-            android:contentDescription="Década 80s"/>
+            app:shapeAppearanceOverlay="@style/CircleShapeAppearance"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Década 80s"
-            android:textColor="@android:color/white"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="18sp"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp" />
     </LinearLayout>
 
     <!-- Década 2010s -->
@@ -50,20 +61,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <ImageButton
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/btn2010s"
             android:layout_width="220dp"
             android:layout_height="220dp"
             android:src="@drawable/ic_artist2"
-            android:background="@android:color/transparent"
-            android:contentDescription="Década 2010s"/>
+            android:contentDescription="Década 2010s"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircleShapeAppearance"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Década 2010s"
-            android:textColor="@android:color/white"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="18sp"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp" />
     </LinearLayout>
-</LinearLayout>
 
+</LinearLayout>

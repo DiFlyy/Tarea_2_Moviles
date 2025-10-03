@@ -12,6 +12,7 @@ class ArtistsActivity : AppCompatActivity() {
     private var decade: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        com.practica2.popmusic.util.ThemeHelper.applyTheme(this)
         super.onCreate(savedInstanceState)
         b = ActivityArtistsBinding.inflate(layoutInflater)
         setContentView(b.root)
